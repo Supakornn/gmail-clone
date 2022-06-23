@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import AppsIcon from "@mui/icons-material/Apps";
@@ -47,7 +47,10 @@ const HeaderMiddle = styled.div`
   }
 `;
 
-const HeaderRight = styled.div``;
+const HeaderRight = styled.div`
+  display: flex;
+  padding-right: 10px;
+`;
 
 const Header = () => {
   return (
@@ -74,6 +77,7 @@ const Header = () => {
         <IconButton>
           <NotificationsIcon />
         </IconButton>
+        <Avatar />
       </HeaderRight>
     </HeaderContainer>
   );
