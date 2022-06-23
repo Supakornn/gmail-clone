@@ -4,6 +4,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
+import AppsIcon from "@mui/icons-material/Apps";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -65,7 +67,14 @@ const Header = () => {
 
         <FormatAlignLeftIcon />
       </HeaderMiddle>
-      <HeaderRight></HeaderRight>
+      <HeaderRight>
+        <IconButton>
+          <AppsIcon />
+        </IconButton>
+        <IconButton>
+          <NotificationsIcon />
+        </IconButton>
+      </HeaderRight>
     </HeaderContainer>
   );
 };
