@@ -23,7 +23,27 @@ const HeaderLeft = styled.div`
   }
 `;
 
-const HeaderMiddle = styled.div``;
+const HeaderMiddle = styled.div`
+  display: flex;
+  flex: 0.7;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+
+  > .MuiSvgIcon-root {
+    color: gray;
+  }
+
+  > input {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    outline-width: 0;
+    font-size: medium;
+    background-color: transparent;
+  }
+`;
 
 const HeaderRight = styled.div``;
 
