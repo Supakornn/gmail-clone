@@ -67,7 +67,6 @@ const Header = () => {
       <HeaderMiddle>
         <SearchIcon />
         <input type="text" placeholder="Search mail" />
-
         <FormatAlignLeftIcon />
       </HeaderMiddle>
       <HeaderRight>
