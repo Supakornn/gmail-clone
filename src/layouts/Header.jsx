@@ -64,11 +64,13 @@ const Header = () => {
           alt="Logo"
         />
       </HeaderLeft>
+
       <HeaderMiddle>
         <SearchIcon />
         <input type="text" placeholder="Search mail" />
         <FormatAlignLeftIcon />
       </HeaderMiddle>
+
       <HeaderRight>
         <IconButton>
           <AppsIcon />
