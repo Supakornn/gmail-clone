@@ -1,10 +1,53 @@
 import React from "react";
 import styled from "styled-components";
 
-const SidebarOptionContainer = styled.div``;
+const SidebarOptionContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  color: #818181;
 
-const SidebarOption = ({ Icon, Title, number }) => {
-  return <SidebarOptionContainer></SidebarOptionContainer>;
+  :hover,
+  :hover > p,
+  :hover > h3 {
+    background-color: #fcecec;
+    color: #c04b37;
+    font-weight: 800 !important;
+  }
+
+  > .MuiSvgIcon-root {
+    padding: 5px;
+  }
+
+  > h3 {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  > p {
+    display: none;
+    font-weight: 300;
+  }
+
+  :hover > p {
+    display: inline;
+  }
+`;
+
+const SidebarOption = ({ Icon, title, number }) => {
+  return (
+    <SidebarOptionContainer>
+      <Icon />
+      <h3>{title}</h3>
+      <p>{number}</p>
+    </SidebarOptionContainer>
+  );
 };
 
 export default SidebarOption;

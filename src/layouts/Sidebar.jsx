@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import InboxIcon from "@mui/icons-material/Inbox";
+import SidebarOption from "../components/SidebarOption";
 
 const SidebarContainer = styled.div`
   .sidebar__compose {
