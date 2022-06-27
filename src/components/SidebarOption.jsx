@@ -13,10 +13,7 @@ const SidebarOptionContainer = styled.div`
 
   :hover,
   :hover > p,
-  :hover > h3,
-  .sidebar__active,
-  .sidebar__active > p,
-  .sidebar__active > h3 {
+  :hover > h3 {
     background-color: #fcecec;
     color: #c04b37;
     font-weight: 800 !important;
@@ -38,18 +35,14 @@ const SidebarOptionContainer = styled.div`
     font-weight: 300;
   }
 
-  .sidebar__active > p {
-    display: inline !important;
-  }
-
   :hover > p {
     display: inline;
   }
 `;
 
-const SidebarOption = ({ Icon, title, number, selected }) => {
+const SidebarOption = ({ Icon, title, number }) => {
   return (
-    <SidebarOptionContainer className={selected && "sidebar__active"}>
+    <SidebarOptionContainer>
       <Icon />
       <h3>{title}</h3>
       <p>{number}</p>
