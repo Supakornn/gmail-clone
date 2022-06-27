@@ -24,6 +24,7 @@ const Sidebar = () => {
       <Button startIcon={<AddIcon fontSize="large" />} className="sidebar__compose">
         compose
       </Button>
+      <SidebarOption Icon={InboxIcon} title="Inbox" number={54} selected={true} />
       <SidebarOption Icon={InboxIcon} title="Inbox" number={54} />
     </SidebarContainer>
   );
