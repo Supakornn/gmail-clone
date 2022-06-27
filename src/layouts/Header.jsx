@@ -49,7 +49,7 @@ const HeaderMiddle = styled.div`
 
 const HeaderRight = styled.div`
   display: flex;
-  padding-right: 10px;
+  padding-right: 20px;
 `;
 
 const Header = () => {
