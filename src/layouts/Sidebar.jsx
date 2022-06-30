@@ -27,7 +27,10 @@ const SidebarContainer = styled.div`
   }
 `;
 
-const SidebarFooterContainer = styled.div``;
+const SidebarFooterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Sidebar = () => {
   return (
