@@ -4,7 +4,7 @@ import Header from "./layouts/Header";
 import Sidebar from "./layouts/Sidebar";
 import EmailList from "./layouts/EmailList";
 import Mail from "./layouts/Mail";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const AppContainer = styled.div``;
 
@@ -18,12 +18,8 @@ const App = () => {
         <BodyContainer>
           <Sidebar />
           <Routes>
-            <Route path="/mail">
-              <Mail />
-            </Route>
-            <Route path="/">
-              <EmailList />
-            </Route>
+            <Route path="/" element={<EmailList />} />
+            <Route path="/mail" element={<Mail />} />
           </Routes>
         </BodyContainer>
       </AppContainer>
