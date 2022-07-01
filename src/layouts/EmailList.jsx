@@ -29,7 +29,15 @@ const EmailListSettings = styled.div`
 `;
 const SettingsLeft = styled.div``;
 const SettingsRight = styled.div``;
-const EmailListSection = styled.div``;
+const EmailListSection = styled.div`
+  position: sticky;
+  top: 0;
+  display: flex;
+  border-bottom: 1px solid whitesmoke;
+  background-color: white;
+  z-index: 999;
+`;
+
 const EmailList = () => {
   return (
     <EmailListContainer>
@@ -64,8 +72,8 @@ const EmailList = () => {
       </EmailListSettings>
       <EmailListSection>
         <Section Icon={InboxIcon} title="primary" color="red" selected />
-        <Section Icon={PeopleIcon} title="primary" color="red" selected />
-        <Section Icon={LocalOfferIcon} title="primary" color="red" selected />
+        <Section Icon={PeopleIcon} title="Social" color="blue" />
+        <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </EmailListSection>
     </EmailListContainer>
   );

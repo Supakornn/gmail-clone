@@ -15,6 +15,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import StarIcon from "@mui/icons-material/Star";
 
 const SidebarContainer = styled.div`
+  flex: 0.3;
+  max-width: 300px;
+  padding-right: 20px;
+
   .sidebar__compose {
     margin-top: 15px !important;
     margin-left: 10px !important;
