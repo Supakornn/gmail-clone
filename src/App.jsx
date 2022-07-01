@@ -6,9 +6,14 @@ import EmailList from "./layouts/EmailList";
 import Mail from "./layouts/Mail";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+  height: 100vh;
+`;
 
-const BodyContainer = styled.div``;
+const BodyContainer = styled.div`
+  display: flex;
+  height: 100vh;
+`;
 
 const App = () => {
   return (
