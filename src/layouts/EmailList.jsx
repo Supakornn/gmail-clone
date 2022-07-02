@@ -28,7 +28,9 @@ const EmailListSettings = styled.div`
   padding-right: 10px;
 `;
 const SettingsLeft = styled.div``;
+
 const SettingsRight = styled.div``;
+
 const EmailListSection = styled.div`
   position: sticky;
   top: 0;

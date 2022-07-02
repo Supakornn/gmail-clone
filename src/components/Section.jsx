@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SectionContainer = styled.div`
   display: flex;
   align-items: center;
-  border-bottom-width: 2px;
+  border-bottom-width: 0px !important;
   padding: 15px;
   min-width: 200px;
   cursor: pointer;
@@ -26,10 +26,7 @@ const Section = ({ Icon, title, color, selected }) => {
     <SectionContainer
       className={`${selected && "selected"}`}
       style={{
-        borderWidth: selected ? "3px" : "0",
-        backgroundColor: selected ? "Whitesmoke " : "white",
-        borderBottom: `3px solid ${color}`,
-        color: `${selected && color}`
+        borderBottom: `3px solid ${color}`
       }}
     >
       <Icon />
