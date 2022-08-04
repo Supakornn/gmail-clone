@@ -17,6 +17,7 @@ const EmailListContainer = styled.div`
   flex: 1;
   overflow: scroll;
 `;
+
 const EmailListSettings = styled.div`
   position: sticky;
   top: 0;
@@ -27,6 +28,7 @@ const EmailListSettings = styled.div`
   z-index: 999;
   padding-right: 10px;
 `;
+
 const SettingsLeft = styled.div``;
 
 const SettingsRight = styled.div``;
@@ -72,6 +74,7 @@ const EmailList = () => {
           </IconButton>
         </SettingsRight>
       </EmailListSettings>
+
       <EmailListSection>
         <Section Icon={InboxIcon} title="primary" color="red" selected />
         <Section Icon={PeopleIcon} title="Social" color="blue" />
