@@ -12,6 +12,7 @@ import Section from "../components/Section";
 import InboxIcon from "@mui/icons-material/Inbox";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import EmailRow from "../components/EmailRow";
 
 const EmailListContainer = styled.div`
   flex: 1;
@@ -32,6 +33,8 @@ const EmailListSettings = styled.div`
 const SettingsLeft = styled.div``;
 
 const SettingsRight = styled.div``;
+
+const EmailLists = styled.div``;
 
 const EmailListSection = styled.div`
   position: sticky;
@@ -80,6 +83,9 @@ const EmailList = () => {
         <Section Icon={PeopleIcon} title="Social" color="blue" />
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </EmailListSection>
+      <EmailLists>
+        <EmailRow title="Hello" subject="Heyyyyy" description="Testing" time="now" />
+      </EmailLists>
     </EmailListContainer>
   );
 };
