@@ -43,6 +43,7 @@ const EmailListSection = styled.div`
   border-bottom: 1px solid whitesmoke;
   background-color: white;
   z-index: 999;
+  height: 50px;
 `;
 
 const EmailList = () => {
@@ -84,6 +85,12 @@ const EmailList = () => {
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </EmailListSection>
       <EmailLists>
+        <EmailRow
+          title="Hello"
+          subject="This is testing abcdefghijklmnopqrstuvwxyz"
+          description="WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+          time="now"
+        />
         <EmailRow title="Hello" subject="Heyyyyy" description="Testing" time="now" />
       </EmailLists>
     </EmailListContainer>
