@@ -58,7 +58,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
   const navigate = useNavigate();
 
   return (
-    <EmailRowContainer onClick={() => navigate.push("/mail")}>
+    <EmailRowContainer onClick={() => navigate("/mail")}>
       <EmailRowOptions>
         <Checkbox />
         <IconButton>
