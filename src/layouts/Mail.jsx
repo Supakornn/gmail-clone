@@ -39,9 +39,21 @@ const MailBody = styled.div`
   background-color: white;
   padding: 20px;
   height: 100vh;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.24);
 `;
 
-const MailBodyHeader = styled.div``;
+const MailBodyHeader = styled.div`
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  padding: 20px;
+  position: relative;
+
+  > h2 {
+    font-weight: 400;
+    margin-right: 20px;
+  }
+`;
 
 const MailMessage = styled.div``;
 
