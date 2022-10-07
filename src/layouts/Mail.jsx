@@ -11,14 +11,39 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import LabelImportantIcon from "@mui/icons-material/LabelImportant";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
+import PrintIcon from "@mui/icons-material/Print";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
-const MailContainer = styled.div``;
+const MailContainer = styled.div`
+  flex: 1;
+  background-color: whitesmoke;
+`;
 
-const MailTools = styled.div``;
+const MailTools = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+`;
 
-const MailToolsLeft = styled.div``;
+const MailToolsLeft = styled.div`
+  display: flex;
+`;
 
 const MailToolsRight = styled.div``;
+
+const MailBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  background-color: white;
+  padding: 20px;
+  height: 100vh;
+`;
+
+const MailBodyHeader = styled.div``;
+
+const MailMessage = styled.div``;
 
 const Mail = () => {
   const navigate = useNavigate();
@@ -64,8 +89,31 @@ const Mail = () => {
           </IconButton>
         </MailToolsLeft>
 
-        <MailToolsRight></MailToolsRight>
+        <MailToolsRight>
+          <IconButton>
+            <UnfoldMoreIcon />
+          </IconButton>
+          <IconButton>
+            <PrintIcon />
+          </IconButton>
+          <IconButton>
+            <ExitToAppIcon />
+          </IconButton>
+        </MailToolsRight>
       </MailTools>
+
+      <MailBody>
+        <MailBodyHeader>
+          <h2>subject</h2>
+          <LabelImportantIcon className="mail_important" />
+          <p>title</p>
+          <p>10pm</p>
+        </MailBodyHeader>
+
+        <MailMessage>
+          <p>message</p>
+        </MailMessage>
+      </MailBody>
     </MailContainer>
   );
 };
