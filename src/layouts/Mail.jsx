@@ -53,6 +53,18 @@ const MailBodyHeader = styled.div`
     font-weight: 400;
     margin-right: 20px;
   }
+
+  .mail_important {
+    color: #e8ab02 !important;
+  }
+
+  .mail_time {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    font-size: 12px;
+    color: gray;
+  }
 `;
 
 const MailMessage = styled.div``;
@@ -119,7 +131,7 @@ const Mail = () => {
           <h2>subject</h2>
           <LabelImportantIcon className="mail_important" />
           <p>title</p>
-          <p>10pm</p>
+          <p className="mail_time">10pm</p>
         </MailBodyHeader>
 
         <MailMessage>
