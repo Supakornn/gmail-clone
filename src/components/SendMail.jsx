@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeSendMessage } from "../features/mailSlice";
 
 const SendMailContainer = styled.div`
   position: absolute;
@@ -36,6 +38,13 @@ const SendMailContainer = styled.div`
   .sendMail_message {
     flex: 1;
   }
+
+  .sendMail_error {
+    background-color: white;
+    color: red;
+    text-align: right;
+    padding: 2px;
+  }
 `;
 
 const SendMailHeader = styled.div`
@@ -64,20 +73,43 @@ const SendMailOptions = styled.div`
 `;
 
 const Sendmail = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm();
 
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  const dispatch = useDispatch();
   return (
     <SendMailContainer>
       <SendMailHeader>
         <h3>New Message</h3>
-        <CloseIcon className="sendMail_close" />
+        <CloseIcon className="sendMail_close" onClick={() => dispatch(closeSendMessage())} />
       </SendMailHeader>
 
-      <form>
-        <input name="to" type="text" placeholder="To" />
-        <input name="subject" type="text" placeholder="Subject" />
-        <input name="text" type="text" placeholder="Message..." className="sendMail_message" />
-
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input name="to" type="email" placeholder="To" {...register("to", { required: true })} />
+        {errors.to && <p className="sendMail_error">This field is required</p>}
+        <input
+          name="subject"
+          type="text"
+          placeholder="Subject"
+          {...register("subject", { required: true })}
+        />
+        {errors.subject && <p className="sendMail_error">This field is required</p>}
+        <input
+          name="text"
+          type="text"
+          placeholder="Message..."
+          className="sendMail_message"
+          {...register("text", { required: true })}
+        />
+        {errors.text && <p className="sendMail_error">This field is required</p>}
         <SendMailOptions>
           <Button className="sendMail_send" variant="contained" color="primary" type="submit">
             Send
