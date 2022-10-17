@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Checkbox, IconButton } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -13,10 +12,17 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import EmailRow from "../components/EmailRow";
+import { db } from "../firebase/firebase";
+import React, { useEffect, useState } from "react";
 
 const EmailListContainer = styled.div`
   flex: 1;
   overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  --ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const EmailListSettings = styled.div`
@@ -34,7 +40,9 @@ const SettingsLeft = styled.div``;
 
 const SettingsRight = styled.div``;
 
-const EmailLists = styled.div``;
+const EmailLists = styled.div`
+  padding-bottom: 20%;
+`;
 
 const EmailListSection = styled.div`
   position: sticky;
@@ -47,6 +55,20 @@ const EmailListSection = styled.div`
 `;
 
 const EmailList = () => {
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    db.collection("emails")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setEmails(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data()
+          }))
+        )
+      );
+  });
   return (
     <EmailListContainer>
       <EmailListSettings>
@@ -85,13 +107,16 @@ const EmailList = () => {
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </EmailListSection>
       <EmailLists>
-        <EmailRow
-          title="Hello"
-          subject="This is testing abcdefghijklmnopqrstuvwxyz"
-          description="WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-          time="now"
-        />
-        <EmailRow title="Hello" subject="Heyyyyy" description="Testing" time="now" />
+        {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
       </EmailLists>
     </EmailListContainer>
   );
