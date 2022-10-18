@@ -6,6 +6,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import AppsIcon from "@mui/icons-material/Apps";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useSelector } from "react-redux";
+import { selectUser, logout } from "../features/userSlice";
+import { auth } from "../firebase/firebase";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -53,6 +56,14 @@ const HeaderRight = styled.div`
 `;
 
 const Header = () => {
+  const user = useSelector(selectUser);
+
+  const signOut = () => {
+    auth.signOut().then((dispatch) => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <HeaderContainer>
       <HeaderLeft>
@@ -78,7 +89,7 @@ const Header = () => {
         <IconButton>
           <NotificationsIcon />
         </IconButton>
-        <Avatar />
+        <Avatar onClick={signOut} src={user?.photoUrl} />
       </HeaderRight>
     </HeaderContainer>
   );
