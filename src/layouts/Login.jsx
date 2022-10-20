@@ -30,9 +30,9 @@ const Login = () => {
       .then(({ user }) => {
         dispatch(
           login({
-            displayName: "sss",
-            email: "sss",
-            photoUrl: "sss"
+            displayName: user.user.displayName,
+            email: user.user.email,
+            photoUrl: user.user.photoURL
           })
         );
       })
