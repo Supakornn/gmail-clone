@@ -79,7 +79,6 @@ const Sendmail = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors }
   } = useForm();
 

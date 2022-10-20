@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { auth, provider } from "../firebase/firebase";
 import { login } from "../features/userSlice";
+import { Button } from "@mui/material";
 
 const LoginSection = styled.div`
   background-color: #f2f2f2;
@@ -29,9 +30,9 @@ const Login = () => {
       .then(({ user }) => {
         dispatch(
           login({
-            displayName: user.displayName,
-            email: user.email,
-            photoUrl: user.photoURL
+            displayName: "sss",
+            email: "sss",
+            photoUrl: "sss"
           })
         );
       })
@@ -45,9 +46,9 @@ const Login = () => {
           src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2020%2F11%2FGmail-Logo.png&f=1&nofb=1&ipt=66dc71162bcb19cb3264444ed41857bbceb94a6fa0c454fd69aeaa54f6bbbc33&ipo=images"
           alt="logo"
         />
-        <button varaint="contained" color="primary" onClick={signIn}>
+        <Button onClick={signIn} variant="contained" color="primary">
           Login
-        </button>
+        </Button>
       </LoginContainer>
     </LoginSection>
   );
